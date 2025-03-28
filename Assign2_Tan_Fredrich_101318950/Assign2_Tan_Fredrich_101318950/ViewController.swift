@@ -103,6 +103,17 @@ class ViewController: UIViewController, UISearchBarDelegate {
             displayProduct(at: currentIndex)
         }
     }
+        
+    @IBAction func viewAllTapped(_ sender: UIButton){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let listVC = storyboard.instantiateViewController(withIdentifier: "ProductListViewController")
+        present(listVC, animated: true)
+
+    }
+
+    @IBAction func addProductTapped(_ sender: UIButton){
+        performSegue(withIdentifier: "showAddProduct", sender: self)
+    }
 }
 
 

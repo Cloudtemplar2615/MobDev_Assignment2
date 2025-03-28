@@ -1,29 +1,29 @@
 //
-//  ProductListViewer.swift
+//  ProductListViewController.swift
 //  Assign2_Tan_Fredrich_101318950
 //
-//  Created by Fredrich Tan on 2025-03-28.
+//  Created by Fredrich Tan on 2025-03-27.
 //
 
 import UIKit
 import CoreData
 
 class ProductListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
-   
+    
     @IBOutlet weak var tableView: UITableView!
     var products: [Product] = []
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         fetchProducts()
     }
-   
+    
     func fetchProducts(){
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         let request: NSFetchRequest<Product> = Product.fetchRequest()
-       
+        
         do{
             products = try context.fetch(request)
             tableView.reloadData()
@@ -31,11 +31,10 @@ class ProductListViewController: UIViewController, UITableViewDelegate, UITableV
             print("Failed to fetch products: \(error)")
         }
     }
-   
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return products.count
     }
-
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath)
@@ -44,7 +43,4 @@ class ProductListViewController: UIViewController, UITableViewDelegate, UITableV
         return cell
     }
 
-
 }
-
-

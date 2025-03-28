@@ -11,7 +11,7 @@ import CoreData
 class AddProductViewController: UIViewController{
     
     @IBOutlet weak var nameField: UITextField!
-    @IBOutlet weak var descField: UITextField!
+    @IBOutlet weak var descriptionTextField: UITextField!
     @IBOutlet weak var priceField: UITextField!
     @IBOutlet weak var providerField: UITextField!
   
@@ -26,7 +26,7 @@ class AddProductViewController: UIViewController{
         let product = Product(context: context)
         product.id = UUID()
         product.name = nameField.text
-        product.productDescription = descField.text
+        product.productDescription = descriptionTextField.text
         product.provider  = providerField.text
         product.price = Double(priceField.text ?? "0") ?? 0.0
         
