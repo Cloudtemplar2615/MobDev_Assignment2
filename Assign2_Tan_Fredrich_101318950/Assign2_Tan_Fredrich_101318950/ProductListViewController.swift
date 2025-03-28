@@ -59,11 +59,17 @@ class ProductListViewController: UIViewController, UITableViewDelegate, UITableV
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath)
-        let product = products[indexPath.row]
-        cell.textLabel?.text = product.name
-        return cell
-    }
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath)
+            let product = products[indexPath.row]
+            
+            let name = product.name ?? "Unknown"
+            let price = product.price
+            let provider = product.provider ?? "Unknown"
+            
+            cell.textLabel?.text = "\(name) - $\(price) by \(provider)"
+            
+            return cell
+        }
     
 
     func tableView(_ tableView: UITableView,
