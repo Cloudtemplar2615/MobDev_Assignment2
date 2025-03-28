@@ -14,31 +14,33 @@ class AddProductViewController: UIViewController{
     @IBOutlet weak var descriptionTextField: UITextField!
     @IBOutlet weak var priceField: UITextField!
     @IBOutlet weak var providerField: UITextField!
-  
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     func showAlert(message: String) {
-            let alert = UIAlertController(title: "Invalid Input",
-                                          message: message,
-                                          preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default))
-            present(alert, animated: true, completion: nil)
-        }
+        let alert = UIAlertController(title: "Invalid Input",
+                                      message: message,
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func cancelTapped(_ sender: UIButton){
+        self.dismiss(animated: true, completion: nil)
+    }
     
     
     @IBAction func saveTapped(_ sender: UIButton){
         
-            guard
-                    let nameText = nameField.text, !nameText.isEmpty,
-                    let descText = descriptionTextField.text, !descText.isEmpty
-                else {
-                    showAlert(message: "Name and description cannot be empty.")
-                    return
-                }
-       
-
+        guard
+            let nameText = nameField.text, !nameText.isEmpty,
+            let descText = descriptionTextField.text, !descText.isEmpty
+        else {
+            showAlert(message: "Name and description cannot be empty.")
+            return
+        }
         
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
@@ -58,3 +60,4 @@ class AddProductViewController: UIViewController{
     }
 
 }
+
