@@ -19,6 +19,7 @@
 		178219012D949E8E0042AF8F /* Assign2_Tan_Fredrich_101318950UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178219002D949E8E0042AF8F /* Assign2_Tan_Fredrich_101318950UITestsLaunchTests.swift */; };
 		17A94C322D94B149008DC9C7 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A94C312D94B149008DC9C7 /* Product.swift */; };
 		17A94C342D94BD77008DC9C7 /* AddProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A94C332D94BD77008DC9C7 /* AddProductViewController.swift */; };
+		716A40692D96931300526EAD /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716A40682D96930500526EAD /* ProductListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		178219002D949E8E0042AF8F /* Assign2_Tan_Fredrich_101318950UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assign2_Tan_Fredrich_101318950UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		17A94C312D94B149008DC9C7 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		17A94C332D94BD77008DC9C7 /* AddProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductViewController.swift; sourceTree = "<group>"; };
+		716A40682D96930500526EAD /* ProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 		178218D92D949E8D0042AF8F /* Assign2_Tan_Fredrich_101318950 */ = {
 			isa = PBXGroup;
 			children = (
+				716A40682D96930500526EAD /* ProductListViewController.swift */,
 				178218DA2D949E8D0042AF8F /* AppDelegate.swift */,
 				178218DC2D949E8D0042AF8F /* SceneDelegate.swift */,
 				178218DE2D949E8D0042AF8F /* ViewController.swift */,
@@ -268,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				178218DF2D949E8D0042AF8F /* ViewController.swift in Sources */,
+				716A40692D96931300526EAD /* ProductListViewController.swift in Sources */,
 				178218E52D949E8D0042AF8F /* Assign2_Tan_Fredrich_101318950.xcdatamodeld in Sources */,
 				17A94C342D94BD77008DC9C7 /* AddProductViewController.swift in Sources */,
 				17A94C322D94B149008DC9C7 /* Product.swift in Sources */,
