@@ -14,7 +14,7 @@ Features to be added
 
 To do at the end
 - Fix code and clean up - done
-- comments on each function - done
+- comments on each function - Not Done
 - and finally testing to ensure everything works as it should every button must be tested - done
 
 
