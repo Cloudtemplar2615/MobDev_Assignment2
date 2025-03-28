@@ -8,6 +8,7 @@ Features to be added
 - UI improvement maybe add colours and fix buttons for better viewing or navigation
 - detailed cells
 - etc.. more thinking time to see what else might be beneficial to the app
+- fix add product section in order to keep labels on the left and user input on the right for example NAME: (User input)
 
 
 Created By Fredrich Tan - 101318950
