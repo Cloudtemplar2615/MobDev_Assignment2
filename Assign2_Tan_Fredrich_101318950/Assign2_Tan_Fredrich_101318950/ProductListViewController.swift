@@ -24,6 +24,9 @@ class ProductListViewController: UIViewController, UITableViewDelegate, UITableV
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         let request: NSFetchRequest<Product> = Product.fetchRequest()
         
+        let sort = NSSortDescriptor(key: "price", ascending: true)
+        request.sortDescriptors = [sort]
+        
         do {
             products = try context.fetch(request)
             tableView.reloadData()
