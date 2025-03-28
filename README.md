@@ -11,4 +11,10 @@ Features to be added
 - fix add product section in order to keep labels on the left and user input on the right for example NAME: (User input)
 
 
+To do at the end
+- Fix code and clean up 
+- comments on each function 
+- and finally testing to ensure everything works as it should every button must be tested 
+
+
 Created By Fredrich Tan - 101318950
