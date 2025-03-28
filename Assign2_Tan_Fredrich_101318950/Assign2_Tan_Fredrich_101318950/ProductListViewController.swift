@@ -8,7 +8,7 @@
 import UIKit
 import CoreData
 
-class ProductListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class ProductListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     var products: [Product] = []
@@ -20,14 +20,14 @@ class ProductListViewController: UIViewController, UITableViewDelegate, UITableV
         fetchProducts()
     }
     
-    func fetchProducts(){
+    func fetchProducts() {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         let request: NSFetchRequest<Product> = Product.fetchRequest()
         
-        do{
+        do {
             products = try context.fetch(request)
             tableView.reloadData()
-        }catch{
+        } catch {
             print("Failed to fetch products: \(error)")
         }
     }
@@ -42,5 +42,25 @@ class ProductListViewController: UIViewController, UITableViewDelegate, UITableV
         cell.textLabel?.text = product.name
         return cell
     }
+    
 
+    func tableView(_ tableView: UITableView,
+                   commit editingStyle: UITableViewCell.EditingStyle,
+                   forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+
+            let productToDelete = products[indexPath.row]
+
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            context.delete(productToDelete)
+
+            do {
+                try context.save()
+                products.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            } catch {
+                print("Error deleting product: \(error)")
+            }
+        }
+    }
 }
