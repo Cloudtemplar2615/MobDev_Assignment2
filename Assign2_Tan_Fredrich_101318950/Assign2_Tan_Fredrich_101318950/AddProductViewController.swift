@@ -21,6 +21,13 @@ class AddProductViewController: UIViewController{
     }
     
     @IBAction func saveTapped(_ sender: UIButton){
+        
+        guard let nameText = nameField.text, !nameText.isEmpty
+              let descriptionText = descriptionTextField.text, !descriptionTextField.isEmpty else{
+            showAlert(message"Name and desxription cannot be empty.")
+            return
+        }
+        
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
         let product = Product(context: context)
