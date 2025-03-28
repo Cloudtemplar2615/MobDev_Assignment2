@@ -20,6 +20,25 @@ class ProductListViewController: UIViewController, UITableViewDelegate, UITableV
         fetchProducts()
     }
     
+    @IBAction func sortSegmentChanged(_ sender: UISegmentedControl){
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let request: NSFetchRequest<Product> = Product.fetchRequest()
+        
+        if sender.selectedSegmentIndex == 0{
+            let sort = NSSortDescriptor(key: "price", ascending: true)
+            request.sortDescriptors = [sort]
+        }else{
+            let sort = NSSortDescriptor(key: "price", ascending: false)
+            request.sortDescriptors = [sort]
+        }
+        do{
+            products = try context.fetch(request)
+            tableView.reloadData()
+        }catch{
+            print("Failed to fetch products \(error)")
+        }
+    }
+    
     func fetchProducts() {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         let request: NSFetchRequest<Product> = Product.fetchRequest()
