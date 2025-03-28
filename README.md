@@ -9,6 +9,7 @@ Features to be added
 - detailed cells
 - etc.. more thinking time to see what else might be beneficial to the app
 - fix add product section in order to keep labels on the left and user input on the right for example NAME: (User input)
+-refining sorting possibly
 
 
 To do at the end
